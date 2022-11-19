@@ -13,7 +13,7 @@ const AskRoofArea = () => {
 
   return (
     <>
-      <nav className="h-32 py-8 px-28 flex justify-center md:block">
+      <nav className="h-32 py-8 px-28 flex justify-center xl:block">
         <img src="./assets/logo.svg" alt="Greener Logo" />
       </nav>
 

@@ -42,9 +42,9 @@ const AskContructionTime = () => {
 
         <div className="flex flex-col xl:flex-row gap-4 xl:gap-28 items-center justify-center">
           <div
-            className={`item ${constructionTime === "1" && "selected"} ${
-              isMobile && "!w-[160px] !h-[152px]"
-            }`}
+            className={`item ${
+              constructionTime === "1" && "mobileSelected xl:selected"
+            } ${isMobile && "!w-[160px] !h-[152px]"}`}
             id="option1"
             onClick={() => {
               setConstructionTime("1");
@@ -66,9 +66,9 @@ const AskContructionTime = () => {
           </div>
 
           <div
-            className={`item ${constructionTime === "2" && "selected"} ${
-              isMobile && "!w-[160px] !h-[152px]"
-            }`}
+            className={`item ${
+              constructionTime === "2" && "mobileSelected xl:selected"
+            } ${isMobile && "!w-[160px] !h-[152px]"}`}
             id="option2"
             onClick={() => {
               setConstructionTime("2");
@@ -90,9 +90,9 @@ const AskContructionTime = () => {
           </div>
 
           <div
-            className={`item ${constructionTime === "3" && "selected"} ${
-              isMobile && "!w-[160px] !h-[152px]"
-            }`}
+            className={`item ${
+              constructionTime === "3" && "mobileSelected xl:selected"
+            } ${isMobile && "!w-[160px] !h-[152px]"}`}
             id="option3"
             onClick={() => {
               setConstructionTime("3");
