@@ -1,8 +1,10 @@
 import React from "react";
 import NumberInput from "../components/NumberInput";
 import { generateURLstring } from "../util/generateURLstring";
+import useCheckMobileScreen from "../util/useCheckMobileScreen";
 
 const AskGarage = () => {
+  const isMobile = useCheckMobileScreen();
   const [garage, setGarage] = React.useState(localStorage.getItem("garage"));
 
   const changeHandler = (e) => {
@@ -17,6 +19,7 @@ const AskGarage = () => {
       </nav>
 
       <NumberInput
+        isMobile={isMobile}
         state={garage}
         changeHandler={changeHandler}
         backNav="/isolate"

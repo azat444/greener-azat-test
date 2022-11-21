@@ -1,8 +1,10 @@
 import React from "react";
 import NumberInput from "../components/NumberInput";
 import { generateURLstring } from "../util/generateURLstring";
+import useCheckMobileScreen from "../util/useCheckMobileScreen";
 
 const AskcrawlSpaceArea = () => {
+  const isMobile = useCheckMobileScreen();
   const [crawlSpace, setcrawlSpace] = React.useState(
     localStorage.getItem("crawlSpace")
   );
@@ -19,6 +21,7 @@ const AskcrawlSpaceArea = () => {
       </nav>
 
       <NumberInput
+        isMobile={isMobile}
         state={crawlSpace}
         changeHandler={changeHandler}
         backNav="/isolate"

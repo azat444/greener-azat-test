@@ -1,8 +1,10 @@
 import React from "react";
 import NumberInput from "../components/NumberInput";
 import { generateURLstring } from "../util/generateURLstring";
+import useCheckMobileScreen from "../util/useCheckMobileScreen";
 
 const AskatticArea = () => {
+  const isMobile = useCheckMobileScreen();
   const [atticArea, setatticArea] = React.useState(
     localStorage.getItem("atticArea")
   );
@@ -26,6 +28,7 @@ const AskatticArea = () => {
         text1={"Quelle est la surface approximative de"}
         text2={"combles à isoler ?"}
         label={"Surface en m2"}
+        isMobile={isMobile}
       />
     </>
   );

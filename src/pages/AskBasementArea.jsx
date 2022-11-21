@@ -1,8 +1,11 @@
 import React from "react";
 import NumberInput from "../components/NumberInput";
 import { generateURLstring } from "../util/generateURLstring";
+import useCheckMobileScreen from "../util/useCheckMobileScreen";
 
 const AskBasementArea = () => {
+  const isMobile = useCheckMobileScreen();
+
   const [basement, setBasement] = React.useState(
     localStorage.getItem("basement")
   );
@@ -26,6 +29,7 @@ const AskBasementArea = () => {
         text1={"Quelle est la surface de votre sous-sol"}
         text2={"?"}
         label={"Surface en m2"}
+        isMobile={isMobile}
       />
     </>
   );

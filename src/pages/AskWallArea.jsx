@@ -1,7 +1,9 @@
 import React from "react";
 import NumberInput from "../components/NumberInput";
+import useCheckMobileScreen from "../util/useCheckMobileScreen";
 
 const AskwallArea = () => {
+  const isMobile = useCheckMobileScreen();
   const [wallarea, setwallarea] = React.useState(
     localStorage.getItem("wallarea")
   );
@@ -37,6 +39,7 @@ const AskwallArea = () => {
         text1={"Quelle est la surface des murs à isoler"}
         text2={"?"}
         label={"Surface en m2"}
+        isMobile={isMobile}
       />
     </>
   );
