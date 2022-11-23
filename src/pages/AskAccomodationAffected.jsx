@@ -1,7 +1,9 @@
 import React from "react";
 import NameInput from "../components/NameInput";
+import useCheckMobileScreen from "../util/useCheckMobileScreen";
 
 const AskAccomodationAffected = () => {
+  const isMobile = useCheckMobileScreen();
   const [accomodationAffected, setAccomodationAffected] = React.useState(
     localStorage.getItem("accomodationAffected")
   );
@@ -26,6 +28,7 @@ const AskAccomodationAffected = () => {
         type="text"
         text2={"les travaux ?"}
         label={"Adresse"}
+        isMobile={isMobile}
       />
     </>
   );

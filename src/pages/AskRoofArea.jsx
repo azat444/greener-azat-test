@@ -1,7 +1,9 @@
 import React from "react";
 import NumberInput from "../components/NumberInput";
+import useCheckMobileScreen from "../util/useCheckMobileScreen";
 
 const AskRoofArea = () => {
+  const isMobile = useCheckMobileScreen();
   const [roofArea, setRoofArea] = React.useState(
     localStorage.getItem("roofArea")
   );
@@ -25,6 +27,7 @@ const AskRoofArea = () => {
         text1={"Quelle est la surface du pan de toiture"}
         text2={"où poser les panneaux ?"}
         label={"Surface en m2"}
+        isMobile={isMobile}
       />
     </>
   );

@@ -1,8 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import SelectComp from "../components/SelectComp";
+import useCheckMobileScreen from "../util/useCheckMobileScreen";
 
 const AskRoofOrientation = () => {
+  const isMobile = useCheckMobileScreen();
   const [roofOrientation, setRoofOrientation] = React.useState(
     localStorage.getItem("roofOrientation")
   );
@@ -18,65 +20,85 @@ const AskRoofOrientation = () => {
         <img src="./assets/logo.svg" alt="Greener Logo" />
       </nav>
 
-      <section className="flex flex-col gap-12 items-center">
-        <div className="flex items-center gap-2 w-[100vw]">
-          <div className="ml-28">
-            <Link to="/heatenergy">
-              <img src="./assets/arrow.svg" alt="Back" />
+      <section className="h-[85vh] flex flex-col gap-4 xl:gap-24 items-center">
+        <div className="flex items-center">
+          <div className={`absolute ${isMobile ? "top-24 left-4" : "left-28"}`}>
+            <Link to="/solar">
+              <img
+                className={isMobile && "w-[27px] h-[27px]"}
+                src="./assets/arrow.svg"
+                alt="Back"
+              />
             </Link>
           </div>
-          <h1 className="ml-32 mr-72 heading flex-1 leading-[60px] text-center">
-            Quelle est l'orientation du pan de toiture où vous souhaitez
-            installer vos panneaux photovoltaïques ?
-          </h1>
+          <div className="flex-1 flex items-center gap-2">
+            <h1
+              className={
+                isMobile
+                  ? "inter text-2xl text-center font-bold leading-[29px] px-6 py-4"
+                  : "mx-auto heading flex-1 text-center lg:text-5xl px-24"
+              }
+            >
+              Quelle est l'orientation du pan de toiture où vous souhaitez
+              installer vos panneaux photovoltaïques ?
+            </h1>
+          </div>
         </div>
 
         {/* Make a grid of 6 elements in 2 rows */}
-        <div className="grid grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 xl:gap-6">
           <SelectComp
             selected={roofOrientation === "1"}
             setSelected={() => setSelected("1")}
             text="Est"
+            isMobile={isMobile}
           />
           <SelectComp
             selected={roofOrientation === "2"}
             setSelected={() => setSelected("2")}
             text="Sud"
+            isMobile={isMobile}
           />
           <SelectComp
             selected={roofOrientation === "3"}
             setSelected={() => setSelected("3")}
             text={"Sud-Est"}
+            isMobile={isMobile}
           />
           <SelectComp
             selected={roofOrientation === "4"}
             setSelected={() => setSelected("4")}
             text={"Sud-Est"}
+            isMobile={isMobile}
           />
           <SelectComp
             selected={roofOrientation === "5"}
             setSelected={() => setSelected("5")}
             text={"Nord-Est"}
+            isMobile={isMobile}
           />
           <SelectComp
             selected={roofOrientation === "6"}
             setSelected={() => setSelected("6")}
             text={"Sud-Ouest"}
+            isMobile={isMobile}
           />
           <SelectComp
             selected={roofOrientation === "7"}
             setSelected={() => setSelected("7")}
             text={"Sud-Ouest"}
+            isMobile={isMobile}
           />
           <SelectComp
             selected={roofOrientation === "8"}
             setSelected={() => setSelected("8")}
             text={"Ouest"}
+            isMobile={isMobile}
           />
         </div>
 
         <Link to={`/roofarea`}>
-          <button disabled={!roofOrientation} className="button">
+          <button disabled={!roofOrientation} className="button mt-6 xl:mt-0">
             CONTINUER
           </button>
         </Link>

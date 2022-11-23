@@ -9,25 +9,59 @@ const NameInput = ({
   text1,
   text2,
   label,
+  isMobile,
 }) => {
   return (
-    <section className="flex flex-col gap-24 items-center">
-      <div className="flex items-center gap-2 w-[100vw]">
-        <div className="ml-28">
+    // <section className="flex flex-col gap-24 items-center">
+    //   <div className="flex items-center gap-2 w-[100vw]">
+    //     <div className="ml-28">
+    //       <Link to={backNav}>
+    //         <img src="./assets/arrow.svg" alt="Back" />
+    //       </Link>
+    //     </div>
+    //     <h1 className="ml-32 mr-72 heading flex-1 text-center my-0">
+    //       {text1}
+    //       <br />
+    //       {text2}
+    //     </h1>
+    //   </div>
+
+    <section className="h-[85vh] flex flex-col gap-4 xl:gap-24 items-center">
+      <div className="flex items-center">
+        <div className={`absolute ${isMobile ? "top-24 left-4" : "left-28"}`}>
           <Link to={backNav}>
-            <img src="./assets/arrow.svg" alt="Back" />
+            <img
+              className={isMobile && "w-[27px] h-[27px]"}
+              src="./assets/arrow.svg"
+              alt="Back"
+            />
           </Link>
         </div>
-        <h1 className="ml-32 mr-72 heading flex-1 text-center my-0">
-          {text1}
-          <br />
-          {text2}
-        </h1>
+        <div className="flex-1 flex items-center gap-2">
+          <h1
+            className={
+              isMobile
+                ? "inter text-2xl text-center font-bold leading-[29px] px-6 py-4"
+                : "mx-auto heading flex-1 text-center lg:text-5xl px-24"
+            }
+          >
+            {text1}
+            <br />
+            {text2}
+          </h1>
+        </div>
       </div>
-      <div className="flex flex-col gap-8 items-center">
-        <label>{label}</label>
+
+      <div
+        className={`flex-1 justify-center flex flex-col ${
+          isMobile ? "gap-4" : "gap-8"
+        } items-center`}
+      >
+        <label className={`${isMobile ? "text-sm" : ""}`}>{label}</label>
         <input
-          className="input bg-transparent"
+          className={`input bg-transparent ${
+            isMobile ? "!w-[320px] !h-[60px] !text-[20px] !p-3" : ""
+          }`}
           type="text"
           value={state}
           onChange={changeHandler}
@@ -35,7 +69,7 @@ const NameInput = ({
       </div>
 
       <Link to={nextNav}>
-        <button disabled={state === ""} className="button">
+        <button disabled={state === ""} className="button mt-12">
           CONTINUER
         </button>
       </Link>

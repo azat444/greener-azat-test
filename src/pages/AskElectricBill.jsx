@@ -1,7 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import useCheckMobileScreen from "../util/useCheckMobileScreen";
 
 const AskElectricBill = () => {
+  const isMobile = useCheckMobileScreen();
   const [electricBill, setElectricBill] = React.useState(
     localStorage.getItem("electricBill")
   );
@@ -16,29 +18,55 @@ const AskElectricBill = () => {
       <nav className="h-32 py-8 px-28 flex justify-center xl:block">
         <img src="./assets/logo.svg" alt="Greener Logo" />
       </nav>
-      <section className="flex flex-col gap-24 items-center">
-        <div className="flex items-center gap-2 w-[100vw]">
-          <div className="ml-28">
-            <Link to={"/slopechoice2"}>
-              <img src="./assets/arrow.svg" alt="Back" />
+
+      <section className="h-[85vh] flex flex-col gap-4 xl:gap-24 items-center">
+        <div className="flex items-center">
+          <div className={`absolute ${isMobile ? "top-24 left-4" : "left-28"}`}>
+            <Link to="/slopechoice">
+              <img
+                className={isMobile && "w-[27px] h-[27px]"}
+                src="./assets/arrow.svg"
+                alt="Back"
+              />
             </Link>
           </div>
-          <h1 className="ml-32 mr-72 heading flex-1 text-center">
-            Quel est le montant de votre facture <br /> d’électricité ?
-          </h1>
+          <div className="flex-1 flex items-center gap-2">
+            <h1
+              className={
+                isMobile
+                  ? "inter text-2xl text-center font-bold leading-[29px] px-6 py-4"
+                  : "mx-auto heading flex-1 text-center lg:text-5xl px-24"
+              }
+            >
+              Quel est le montant de votre facture d’électricité ?
+            </h1>
+          </div>
         </div>
-        <div className="flex gap-8 items-center justify-center">
+
+        <div
+          className={`flex-1 flex ${
+            isMobile ? "gap-4" : "gap-8"
+          } items-center justify-center`}
+        >
           <input
-            className="input w-[350px] bg-transparent"
+            className={`input ${
+              isMobile
+                ? "!w-[200px] !h-[60px] !text-[20px] !rounded-2xl !p-2"
+                : "!w-[350px]"
+            } bg-transparent`}
             type="number"
             value={electricBill}
             onChange={changeHandler}
           />
-          <p className="font-bold text-[50px]">/ mois</p>
+          <p
+            className={`font-bold ${isMobile ? "text-[30px]" : "text-[50px]"}`}
+          >
+            / mois
+          </p>
         </div>
 
         <Link to={"/accomodationaffected"}>
-          <button disabled={!electricBill} className="button">
+          <button disabled={!electricBill} className="button mt-6">
             CONTINUER
           </button>
         </Link>
