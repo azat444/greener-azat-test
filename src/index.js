@@ -44,6 +44,7 @@ root.render(
         <Route path="/oilequiqment" element={<AskOilEquipment />} />
         <Route path="/electricequipment" element={<AskElectricEquipment />} />
         <Route path="/gasequipment" element={<AskGasEquipment />} />
+        <Route path="/solar" element={<AskSolarOption />} />
         <Route path="/isolate" element={<AskIsolate />} />
         <Route path="/garage" element={<AskGarage />} />
         <Route path="/atticInsulation" element={<AskAtticInsulation />} />
@@ -52,7 +53,6 @@ root.render(
         <Route path="/wallInsulation" element={<AskwallInsulation />} />
         <Route path="/wallArea" element={<AskWallArea />} />
         <Route path="/crawlSpaceArea" element={<AskcrawlSpaceArea />} />
-        <Route path="/solar" element={<AskSolarOption />} />
         <Route path="/rooforientation" element={<AskRoofOrientation />} />
         <Route path="/roofarea" element={<AskRoofArea />} />
         <Route path="/slopechoice" element={<AskSlopeChoice />} />
