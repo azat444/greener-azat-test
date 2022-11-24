@@ -1,8 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import SelectComp from "../components/SelectComp";
+import useCheckMobileScreen from "../util/useCheckMobileScreen";
 
 const AskSlopeChoice2 = () => {
+  const isMobile = useCheckMobileScreen();
   const [slopeChoice2, setslopeChoice2] = React.useState(
     localStorage.getItem("slopeChoice2")
   );
@@ -18,16 +20,28 @@ const AskSlopeChoice2 = () => {
         <img src="./assets/logo.svg" alt="Greener Logo" />
       </nav>
 
-      <section className="flex flex-col gap-12 items-center">
-        <div className="flex items-center gap-2 w-[100vw]">
-          <div className="ml-28">
+      <section className="h-[85vh] flex flex-col gap-4 xl:gap-24 items-center">
+        <div className="flex items-center">
+          <div className={`absolute ${isMobile ? "top-24 left-4" : "left-28"}`}>
             <Link to="/roofarea">
-              <img src="./assets/arrow.svg" alt="Back" />
+              <img
+                className={isMobile && "w-[27px] h-[27px]"}
+                src="./assets/arrow.svg"
+                alt="Back"
+              />
             </Link>
           </div>
-          <h1 className="ml-32 mr-72 heading flex-1 leading-[60px] text-center">
-            Quelle inclinaison correspond le plus <br /> à votre toit ?
-          </h1>
+          <div className="flex-1 flex items-center gap-2">
+            <h1
+              className={
+                isMobile
+                  ? "inter text-2xl text-center font-bold leading-[29px] px-6 py-4"
+                  : "mx-auto heading flex-1 text-center lg:text-5xl px-24"
+              }
+            >
+              Quelle inclinaison correspond le plus à votre toit ?
+            </h1>
+          </div>
         </div>
 
         {/* Make a grid of 6 elements in 2 rows */}
@@ -36,26 +50,30 @@ const AskSlopeChoice2 = () => {
             selected={slopeChoice2 === "1"}
             setSelected={() => setSelected("1")}
             text="0° - Toit plat"
+            isMobile={isMobile}
           />
           <SelectComp
             selected={slopeChoice2 === "2"}
             setSelected={() => setSelected("2")}
             text="15° - Méditerranéenne"
+            isMobile={isMobile}
           />
           <SelectComp
             selected={slopeChoice2 === "3"}
             setSelected={() => setSelected("3")}
             text={"30° - Classique"}
+            isMobile={isMobile}
           />
           <SelectComp
             selected={slopeChoice2 === "4"}
             setSelected={() => setSelected("4")}
             text={"45° - Alsacienne"}
+            isMobile={isMobile}
           />
         </div>
 
         <Link to={`/slopechoice`}>
-          <button disabled={!slopeChoice2} className="button">
+          <button disabled={!slopeChoice2} className="button mt-6 xl:mt-0">
             CONTINUER
           </button>
         </Link>
