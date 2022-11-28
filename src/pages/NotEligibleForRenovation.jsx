@@ -14,7 +14,7 @@ const NotEligibleForRenovation = () => {
       <section className="flex flex-col gap-4 xl:gap-8 items-center">
         <div className="flex items-center">
           <div className={`absolute ${isMobile ? "top-24 left-4" : "left-28"}`}>
-            <Link to="/">
+            <Link to="/time">
               <img
                 className={isMobile && "w-[27px] h-[27px]"}
                 src="./assets/arrow.svg"

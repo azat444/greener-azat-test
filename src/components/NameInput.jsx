@@ -12,20 +12,6 @@ const NameInput = ({
   isMobile,
 }) => {
   return (
-    // <section className="flex flex-col gap-24 items-center">
-    //   <div className="flex items-center gap-2 w-[100vw]">
-    //     <div className="ml-28">
-    //       <Link to={backNav}>
-    //         <img src="./assets/arrow.svg" alt="Back" />
-    //       </Link>
-    //     </div>
-    //     <h1 className="ml-32 mr-72 heading flex-1 text-center my-0">
-    //       {text1}
-    //       <br />
-    //       {text2}
-    //     </h1>
-    //   </div>
-
     <section className="h-[85vh] flex flex-col gap-4 xl:gap-24 items-center">
       <div className="flex items-center">
         <div className={`absolute ${isMobile ? "top-24 left-4" : "left-28"}`}>

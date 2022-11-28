@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import HeatEnergyItem from "../components/HeatEnergyItem";
 import useCheckMobileScreen from "../util/useCheckMobileScreen";
 
@@ -13,13 +13,27 @@ export const getNextPath = () => {
 
 const AskHeatingEnergy = () => {
   const isMobile = useCheckMobileScreen();
-  const [heatingEnergy, setHeatingEnergy] = React.useState(
-    localStorage.getItem("heatingEnergy")
-  );
+  const [heatingEnergy, setHeatingEnergy] = React.useState("");
+
   const setSelected = (number) => {
     setHeatingEnergy(number);
     localStorage.setItem("heatingEnergy", number);
   };
+
+  let navigate = useNavigate();
+  React.useEffect(() => {
+    if (heatingEnergy) {
+      navigate(
+        heatingEnergy === "1"
+          ? "/oilequiqment"
+          : heatingEnergy === "2"
+          ? "/electricequipment"
+          : heatingEnergy === "3"
+          ? "/gasequipment"
+          : getNextPath()
+      );
+    }
+  }, [heatingEnergy]);
 
   return (
     <>
@@ -117,7 +131,7 @@ const AskHeatingEnergy = () => {
           />
         </div>
 
-        <Link
+        {/* <Link
           to={`${
             heatingEnergy === "1"
               ? "/oilequiqment"
@@ -131,7 +145,7 @@ const AskHeatingEnergy = () => {
           <button disabled={!heatingEnergy} className="button mt-6">
             CONTINUER
           </button>
-        </Link>
+        </Link> */}
       </section>
     </>
   );

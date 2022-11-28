@@ -1,19 +1,24 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import HeatEnergyItem from "../components/HeatEnergyItem";
 import { getNextPath } from "./AskHeatingEnergy";
 import useCheckMobileScreen from "../util/useCheckMobileScreen";
 
 const AskGasEquipment = () => {
   const isMobile = useCheckMobileScreen();
-  const [gasEquipment, setGasEquipment] = React.useState(
-    localStorage.getItem("gasEquipment")
-  );
+  const [gasEquipment, setGasEquipment] = React.useState("");
 
   const setSelected = (number) => {
     setGasEquipment(number);
     localStorage.setItem("gasEquipment", number);
   };
+
+  let navigate = useNavigate();
+  React.useEffect(() => {
+    if (gasEquipment) {
+      navigate(getNextPath());
+    }
+  }, [gasEquipment]);
 
   return (
     <>
@@ -90,11 +95,11 @@ const AskGasEquipment = () => {
           />
         </div>
 
-        <Link to={getNextPath()}>
+        {/* <Link to={getNextPath()}>
           <button disabled={!gasEquipment} className="button mt-6">
             CONTINUER
           </button>
-        </Link>
+        </Link> */}
       </section>
     </>
   );

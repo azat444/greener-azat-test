@@ -1,18 +1,24 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import SelectComp from "../components/SelectComp";
 import useCheckMobileScreen from "../util/useCheckMobileScreen";
 
 const AskRoofOrientation = () => {
   const isMobile = useCheckMobileScreen();
-  const [roofOrientation, setRoofOrientation] = React.useState(
-    localStorage.getItem("roofOrientation")
-  );
+  const [roofOrientation, setRoofOrientation] = React.useState("");
 
   const setSelected = (number) => {
     setRoofOrientation(number);
     localStorage.setItem("roofOrientation", number);
   };
+
+  let navigate = useNavigate();
+
+  React.useEffect(() => {
+    if (roofOrientation) {
+      navigate("/roofarea");
+    }
+  }, [roofOrientation]);
 
   return (
     <>
@@ -97,11 +103,11 @@ const AskRoofOrientation = () => {
           />
         </div>
 
-        <Link to={`/roofarea`}>
+        {/* <Link to={`/roofarea`}>
           <button disabled={!roofOrientation} className="button mt-6 xl:mt-0">
             CONTINUER
           </button>
-        </Link>
+        </Link> */}
       </section>
     </>
   );

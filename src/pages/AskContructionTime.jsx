@@ -1,13 +1,18 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import useCheckMobileScreen from "../util/useCheckMobileScreen";
 
 const AskContructionTime = () => {
-  const [constructionTime, setConstructionTime] = React.useState(
-    localStorage.getItem("constructionTime")
-  );
+  const [constructionTime, setConstructionTime] = React.useState("");
 
   const isMobile = useCheckMobileScreen();
+  let navigate = useNavigate();
+
+  React.useEffect(() => {
+    if (constructionTime) {
+      return navigate(constructionTime === "1" ? "/noteligible" : "/area");
+    }
+  }, [constructionTime]);
 
   return (
     <>
@@ -113,14 +118,14 @@ const AskContructionTime = () => {
             </p>
           </div>
         </div>
-        <Link to={constructionTime === "1" ? "/noteligible" : "/area"}>
+        {/* <Link to={constructionTime === "1" ? "/noteligible" : "/area"}>
           <button
             disabled={!constructionTime}
             className={`button ${isMobile && "mt-10"}`}
           >
             CONTINUER
           </button>
-        </Link>
+        </Link> */}
       </section>
     </>
   );

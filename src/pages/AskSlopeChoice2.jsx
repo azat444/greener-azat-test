@@ -1,18 +1,23 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import SelectComp from "../components/SelectComp";
 import useCheckMobileScreen from "../util/useCheckMobileScreen";
 
 const AskSlopeChoice2 = () => {
   const isMobile = useCheckMobileScreen();
-  const [slopeChoice2, setslopeChoice2] = React.useState(
-    localStorage.getItem("slopeChoice2")
-  );
+  const [slopeChoice2, setslopeChoice2] = React.useState("");
 
   const setSelected = (number) => {
     setslopeChoice2(number);
     localStorage.setItem("slopeChoice2", number);
   };
+
+  let navigate = useNavigate();
+  React.useEffect(() => {
+    if (slopeChoice2) {
+      return navigate("/slopechoice");
+    }
+  }, [slopeChoice2]);
 
   return (
     <>
@@ -72,11 +77,11 @@ const AskSlopeChoice2 = () => {
           />
         </div>
 
-        <Link to={`/slopechoice`}>
+        {/* <Link to={`/slopechoice`}>
           <button disabled={!slopeChoice2} className="button mt-6 xl:mt-0">
             CONTINUER
           </button>
-        </Link>
+        </Link> */}
       </section>
     </>
   );

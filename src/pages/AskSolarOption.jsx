@@ -1,18 +1,24 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import HeatEnergyItem from "../components/HeatEnergyItem";
 import useCheckMobileScreen from "../util/useCheckMobileScreen";
 
 const AskSolarOption = () => {
   const isMobile = useCheckMobileScreen();
-  const [solarOption, setsolarOption] = React.useState(
-    localStorage.getItem("solarOption")
-  );
+  const [solarOption, setsolarOption] = React.useState("");
 
   const handleSelect = (number) => {
     setsolarOption(number);
     localStorage.setItem("solarOption", number);
   };
+
+  let navigate = useNavigate();
+
+  React.useEffect(() => {
+    if (solarOption) {
+      navigate("/rooforientation");
+    }
+  }, [solarOption]);
 
   return (
     <>
@@ -23,7 +29,7 @@ const AskSolarOption = () => {
       <section className="h-[85vh] flex flex-col gap-4 xl:gap-24 items-center">
         <div className="flex items-center">
           <div className={`absolute ${isMobile ? "top-24 left-4" : "left-28"}`}>
-            <Link to="/goals">
+            <Link to="/heatenergy">
               <img
                 className={isMobile && "w-[27px] h-[27px]"}
                 src="./assets/arrow.svg"
@@ -44,7 +50,7 @@ const AskSolarOption = () => {
           </div>
         </div>
 
-        <div className="flex-1 items-center grid grid-cols-2 gap-6 xl:gap-28">
+        <div className="flex-1 grid grid-cols-2 gap-6 xl:gap-28">
           <HeatEnergyItem
             icon={"./assets/solar1.svg"}
             text={"Panneaux Solaires Photovoltaïques"}
@@ -66,11 +72,11 @@ const AskSolarOption = () => {
             size={isMobile ? "w-[90px] h-[56px]" : ""}
           />
         </div>
-        <Link to={"/rooforientation"}>
+        {/* <Link to={"/rooforientation"}>
           <button disabled={!solarOption} className="button mt-6">
             CONTINUER
           </button>
-        </Link>
+        </Link> */}
       </section>
     </>
   );

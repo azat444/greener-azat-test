@@ -1,21 +1,26 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import useCheckMobileScreen from "../util/useCheckMobileScreen";
+import { useNavigate } from "react-router-dom";
 
 const AskPropertyType = () => {
-  const [propertyType, setPropertyType] = React.useState(
-    localStorage.getItem("propertyType")
-  );
+  const [propertyType, setPropertyType] = React.useState("");
 
   const isMobile = useCheckMobileScreen();
+  let navigate = useNavigate();
+
+  React.useEffect(() => {
+    if (propertyType) {
+      return navigate("/time");
+    }
+  }, [propertyType]);
 
   return (
-    <>
+    <section className="flex flex-col h-screen">
       <nav className="h-32 py-8 px-28 flex justify-center xl:block">
         <img src="./assets/logo.svg" alt="Greener Logo" />
       </nav>
 
-      <section className="flex flex-col gap-24 items-center">
+      <div className="flex flex-grow flex-col gap-24 items-center">
         {isMobile ? (
           <h1 className="inter text-2xl text-center font-bold leading-[29px] px-6">
             Les aides concernent-elles une maison ou un appartement?
@@ -65,13 +70,13 @@ const AskPropertyType = () => {
           </div>
         </div>
 
-        <Link to={"/time"}>
+        {/* <Link to={"/time"}>
           <button disabled={!propertyType} className="button">
             CONTINUER
           </button>
-        </Link>
-      </section>
-    </>
+        </Link> */}
+      </div>
+    </section>
   );
 };
 

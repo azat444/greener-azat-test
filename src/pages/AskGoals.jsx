@@ -31,13 +31,6 @@ const AskGoals = () => {
     setUrl(() => "/goals");
   }, [goals]);
 
-  // React.useEffect(() => {
-  //   const goalsFromLocalStorage = JSON.parse(localStorage.getItem("goals"));
-  //   if (goalsFromLocalStorage) {
-  //     setGoals(goalsFromLocalStorage);
-  //   }
-  // }, []);
-
   const handleSelect = (number) => {
     setGoals((prev) => ({
       ...goals,

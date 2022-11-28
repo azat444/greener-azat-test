@@ -136,7 +136,7 @@ const AskIsolate = () => {
             size={isMobile ? "w-[104px] h-[60px]" : ""}
           />
         </div>
-        {/* // TODO: Route to different screens as the user has selected different options*/}
+        {/* Route to different screens as the user has selected different options*/}
         <Link to={url}>
           <button
             disabled={

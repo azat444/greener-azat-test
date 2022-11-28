@@ -1,19 +1,24 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import HeatEnergyItem from "../components/HeatEnergyItem";
 import { getNextPath } from "./AskHeatingEnergy";
 import useCheckMobileScreen from "../util/useCheckMobileScreen";
 
 const AskOilEquipment = () => {
   const isMobile = useCheckMobileScreen();
-  const [oilEquipment, setOilEquipment] = React.useState(
-    localStorage.getItem("oilEquipment")
-  );
+  const [oilEquipment, setOilEquipment] = React.useState("");
 
   const setSelected = (number) => {
     setOilEquipment(number);
     localStorage.setItem("oilEquipment", number);
   };
+  let navigate = useNavigate();
+
+  React.useEffect(() => {
+    if (oilEquipment) {
+      navigate(getNextPath());
+    }
+  }, [oilEquipment]);
 
   return (
     <>
@@ -80,11 +85,11 @@ const AskOilEquipment = () => {
           />
         </div>
 
-        <Link to={getNextPath()}>
+        {/* <Link to={getNextPath()}>
           <button disabled={!oilEquipment} className="button mt-6">
             CONTINUER
           </button>
-        </Link>
+        </Link> */}
       </section>
     </>
   );

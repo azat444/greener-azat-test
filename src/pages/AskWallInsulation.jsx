@@ -1,18 +1,24 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import HeatEnergyItem from "../components/HeatEnergyItem";
 import useCheckMobileScreen from "../util/useCheckMobileScreen";
 
 const AskwallInsulation = () => {
   const isMobile = useCheckMobileScreen();
-  const [wallInsulation, setwallInsulation] = React.useState(
-    localStorage.getItem("wallInsulation")
-  );
+  const [wallInsulation, setwallInsulation] = React.useState("");
 
   const handleSelect = (number) => {
     setwallInsulation(number);
     localStorage.setItem("wallInsulation", number);
   };
+
+  let navigate = useNavigate();
+
+  React.useEffect(() => {
+    if (wallInsulation) {
+      return navigate("/wallArea");
+    }
+  }, [wallInsulation]);
 
   return (
     <>
@@ -45,9 +51,7 @@ const AskwallInsulation = () => {
         </div>
 
         <div
-          className={`grid grid-cols-2 flex-1 items-center ${
-            isMobile ? "gap-8" : "gap-28"
-          }`}
+          className={`grid grid-cols-2 flex-1 ${isMobile ? "gap-8" : "gap-28"}`}
         >
           <HeatEnergyItem
             icon={"./assets/wallIns1.svg"}
@@ -70,11 +74,11 @@ const AskwallInsulation = () => {
             size={isMobile ? "w-[90px] h-[56px]" : ""}
           />
         </div>
-        <Link to={"/wallArea"}>
+        {/* <Link to={"/wallArea"}>
           <button disabled={!wallInsulation} className="button">
             CONTINUER
           </button>
-        </Link>
+        </Link> */}
       </section>
     </>
   );

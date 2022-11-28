@@ -1,14 +1,13 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import HeatEnergyItem from "../components/HeatEnergyItem";
 import { generateURLstring } from "../util/generateURLstring";
 import useCheckMobileScreen from "../util/useCheckMobileScreen";
 
 const AskAtticInsulation = () => {
   const isMobile = useCheckMobileScreen();
-  const [atticInsulation, setAtticInsulation] = React.useState(
-    localStorage.getItem("atticInsulation")
-  );
+
+  const [atticInsulation, setAtticInsulation] = React.useState("");
 
   const handleSelect = (number) => {
     setAtticInsulation(number);
@@ -16,6 +15,14 @@ const AskAtticInsulation = () => {
   };
   const path = generateURLstring();
   const url = "/atticarea" + path.replace(path[0], "?");
+
+  let navigate = useNavigate();
+
+  React.useEffect(() => {
+    if (atticInsulation) {
+      return navigate(url);
+    }
+  }, [atticInsulation]);
 
   return (
     <>
@@ -48,9 +55,7 @@ const AskAtticInsulation = () => {
         </div>
 
         <div
-          className={`grid grid-cols-2 flex-1 items-center ${
-            isMobile ? "gap-8" : "gap-28"
-          }`}
+          className={`grid grid-cols-2 flex-1 ${isMobile ? "gap-8" : "gap-28"}`}
         >
           <HeatEnergyItem
             icon={"./assets/attic1.svg"}
@@ -73,11 +78,11 @@ const AskAtticInsulation = () => {
             size={isMobile ? "w-[90px] h-[56px]" : ""}
           />
         </div>
-        <Link to={url}>
+        {/* <Link to={url}>
           <button disabled={!atticInsulation} className="button mt-8">
             CONTINUER
           </button>
-        </Link>
+        </Link> */}
       </section>
     </>
   );
