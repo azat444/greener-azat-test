@@ -3,7 +3,13 @@ import useCheckMobileScreen from "../util/useCheckMobileScreen";
 import { useNavigate } from "react-router-dom";
 
 const AskPropertyType = () => {
+  // const [propertyType, setPropertyType] = React.useState(
+  //   localStorage.getItem("propertyType")
+  // );
   const [propertyType, setPropertyType] = React.useState("");
+
+  const startTime = new Date().toLocaleTimeString();
+  localStorage.setItem("startTime", startTime);
 
   const isMobile = useCheckMobileScreen();
   let navigate = useNavigate();
@@ -23,7 +29,7 @@ const AskPropertyType = () => {
       <div className="flex flex-grow flex-col gap-24 items-center">
         {isMobile ? (
           <h1 className="inter text-2xl text-center font-bold leading-[29px] px-6">
-            Les aides concernent-elles une maison ou un appartement?
+            es aides concernent-elles une maison ou un appartement?
           </h1>
         ) : (
           <h1 className="heading">Votre projet concerne ?</h1>

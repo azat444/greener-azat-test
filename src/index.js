@@ -32,40 +32,40 @@ import EndScreen from "./pages/EndScreen";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <React.StrictMode>
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<AskPropertyType />} />
-        <Route path="/time" element={<AskContructionTime />} />
-        <Route path="/noteligible" element={<NotEligibleForRenovation />} />
-        <Route path="/area" element={<AskArea />} />
-        <Route path="/goals" element={<AskGoals />} />
-        <Route path="/heatenergy" element={<AskHeatingEnergy />} />
-        <Route path="/oilequiqment" element={<AskOilEquipment />} />
-        <Route path="/electricequipment" element={<AskElectricEquipment />} />
-        <Route path="/gasequipment" element={<AskGasEquipment />} />
-        <Route path="/solar" element={<AskSolarOption />} />
-        <Route path="/isolate" element={<AskIsolate />} />
-        <Route path="/garage" element={<AskGarage />} />
-        <Route path="/atticInsulation" element={<AskAtticInsulation />} />
-        <Route path="/atticArea" element={<AskAtticArea />} />
-        <Route path="/basementArea" element={<AskBasementArea />} />
-        <Route path="/wallInsulation" element={<AskwallInsulation />} />
-        <Route path="/wallArea" element={<AskWallArea />} />
-        <Route path="/crawlSpaceArea" element={<AskcrawlSpaceArea />} />
-        <Route path="/rooforientation" element={<AskRoofOrientation />} />
-        <Route path="/roofarea" element={<AskRoofArea />} />
-        <Route path="/slopechoice" element={<AskSlopeChoice />} />
-        <Route path="/slopechoice2" element={<AskSlopeChoice2 />} />
-        <Route path="/electricbill" element={<AskElectricBill />} />
-        <Route
-          path="/accomodationaffected"
-          element={<AskAccomodationAffected />}
-        />
-        <Route path="/name" element={<AskName />} />
-        <Route path="/telephone" element={<AskTelephone />} />
-        <Route path="/endscreen" element={<EndScreen />} />
-      </Routes>
-    </BrowserRouter>
-  </React.StrictMode>
+  //<React.StrictMode>
+  <BrowserRouter>
+    <Routes>
+      <Route path="/" element={<AskPropertyType />} />
+      <Route path="/time" element={<AskContructionTime />} />
+      <Route path="/noteligible" element={<NotEligibleForRenovation />} />
+      <Route path="/area" element={<AskArea />} />
+      <Route path="/goals" element={<AskGoals />} />
+      <Route path="/heatenergy" element={<AskHeatingEnergy />} />
+      <Route path="/oilequiqment" element={<AskOilEquipment />} />
+      <Route path="/electricequipment" element={<AskElectricEquipment />} />
+      <Route path="/gasequipment" element={<AskGasEquipment />} />
+      <Route path="/solar" element={<AskSolarOption />} />
+      <Route path="/isolate" element={<AskIsolate />} />
+      <Route path="/garage" element={<AskGarage />} />
+      <Route path="/atticInsulation" element={<AskAtticInsulation />} />
+      <Route path="/atticArea" element={<AskAtticArea />} />
+      <Route path="/basementArea" element={<AskBasementArea />} />
+      <Route path="/wallInsulation" element={<AskwallInsulation />} />
+      <Route path="/wallArea" element={<AskWallArea />} />
+      <Route path="/crawlSpaceArea" element={<AskcrawlSpaceArea />} />
+      <Route path="/rooforientation" element={<AskRoofOrientation />} />
+      <Route path="/roofarea" element={<AskRoofArea />} />
+      <Route path="/slopechoice" element={<AskSlopeChoice />} />
+      <Route path="/slopechoice2" element={<AskSlopeChoice2 />} />
+      <Route path="/electricbill" element={<AskElectricBill />} />
+      <Route
+        path="/accomodationaffected"
+        element={<AskAccomodationAffected />}
+      />
+      <Route path="/name" element={<AskName />} />
+      <Route path="/telephone" element={<AskTelephone />} />
+      <Route path="/endscreen" element={<EndScreen />} />
+    </Routes>
+  </BrowserRouter>
+  //</React.StrictMode>
 );

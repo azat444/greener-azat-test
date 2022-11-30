@@ -4,7 +4,7 @@ import useCheckMobileScreen from "../util/useCheckMobileScreen";
 
 const sendData = () => {
   const scriptUrl =
-    "https://script.google.com/macros/s/AKfycbwU1FD1LOaKq_TfqlTRRq7F8Tt3G7isIYlmHh7OEog0Y9Vq4aQTG5EXeILGl-HuZBhphQ/exec";
+    "https://script.google.com/macros/s/AKfycbx2hnwUc2YHKoXcraZDCDIjzWJ8_m_z65cN0pZFp5tFv3swB9ikCXQpbRysIvqaBAONTw/exec";
 
   const firstName = localStorage.getItem("firstName");
   const lastName = localStorage.getItem("lastName");
