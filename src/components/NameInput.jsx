@@ -12,7 +12,21 @@ const NameInput = ({
   isMobile,
 }) => {
   return (
-    <section className="h-[85vh] flex flex-col gap-4 xl:gap-24 items-center">
+    // <section className="flex flex-col gap-24 items-center">
+    //   <div className="flex items-center gap-2 w-[100vw]">
+    //     <div className="ml-28">
+    //       <Link to={backNav}>
+    //         <img src="./assets/arrow.svg" alt="Back" />
+    //       </Link>
+    //     </div>
+    //     <h1 className="ml-32 mr-72 heading flex-1 text-center my-0">
+    //       {text1}
+    //       <br />
+    //       {text2}
+    //     </h1>
+    //   </div>
+
+    <form className="h-[85vh] flex flex-col gap-4 xl:gap-24 items-center">
       <div className="flex items-center">
         <div className={`absolute ${isMobile ? "top-24 left-4" : "left-28"}`}>
           <Link to={backNav}>
@@ -45,6 +59,7 @@ const NameInput = ({
       >
         <label className={`${isMobile ? "text-sm" : ""}`}>{label}</label>
         <input
+          autoFocus
           className={`input bg-transparent ${
             isMobile ? "!w-[320px] !h-[60px] !text-[20px] !p-3" : ""
           }`}
@@ -55,11 +70,11 @@ const NameInput = ({
       </div>
 
       <Link to={nextNav}>
-        <button disabled={state === ""} className="button mt-12">
+        <button type="submit" disabled={state === ""} className="button mt-12">
           CONTINUER
         </button>
       </Link>
-    </section>
+    </form>
   );
 };
 

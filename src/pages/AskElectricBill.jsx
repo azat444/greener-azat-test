@@ -19,7 +19,7 @@ const AskElectricBill = () => {
         <img src="./assets/logo.svg" alt="Greener Logo" />
       </nav>
 
-      <section className="h-[85vh] flex flex-col gap-4 xl:gap-24 items-center">
+      <form className="h-[85vh] flex flex-col gap-4 xl:gap-24 items-center">
         <div className="flex items-center">
           <div className={`absolute ${isMobile ? "top-24 left-4" : "left-28"}`}>
             <Link to="/slopechoice">
@@ -49,6 +49,7 @@ const AskElectricBill = () => {
           } items-center justify-center`}
         >
           <input
+            autoFocus
             className={`input ${
               isMobile
                 ? "!w-[200px] !h-[60px] !text-[20px] !rounded-2xl !p-2"
@@ -66,11 +67,15 @@ const AskElectricBill = () => {
         </div>
 
         <Link to={"/accomodationaffected"}>
-          <button disabled={!electricBill} className="button mt-6">
+          <button
+            type="submit"
+            disabled={!electricBill}
+            className="button mt-6"
+          >
             CONTINUER
           </button>
         </Link>
-      </section>
+      </form>
     </>
   );
 };

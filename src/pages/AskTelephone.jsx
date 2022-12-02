@@ -19,7 +19,7 @@ const AskTelephone = () => {
         <img src="./assets/logo.svg" alt="Greener Logo" />
       </nav>
 
-      <section className="h-[85vh] flex flex-col gap-4 xl:gap-24 items-center">
+      <form className="h-[85vh] flex flex-col gap-4 xl:gap-24 items-center">
         <div className="flex items-center">
           <div className={`absolute ${isMobile ? "top-24 left-4" : "left-28"}`}>
             <Link to="/name">
@@ -59,6 +59,7 @@ const AskTelephone = () => {
               id="telephone"
               type="number"
               value={telephone}
+              autoFocus
               onChange={changeHandler}
             />
             <img
@@ -70,11 +71,11 @@ const AskTelephone = () => {
         </div>
 
         <Link to={"/endscreen"}>
-          <button disabled={!telephone} className="button mt-12">
+          <button type="submit" disabled={!telephone} className="button mt-12">
             CONTINUER
           </button>
         </Link>
-      </section>
+      </form>
     </>
   );
 };

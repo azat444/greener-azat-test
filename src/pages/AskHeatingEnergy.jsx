@@ -6,7 +6,7 @@ import useCheckMobileScreen from "../util/useCheckMobileScreen";
 export const getNextPath = () => {
   const goals = JSON.parse(localStorage.getItem("goals"));
   if (goals.goal3) {
-    return "/solar";
+    return "/heatingequipment";
   }
   return "/rooforientation";
 };
@@ -14,6 +14,9 @@ export const getNextPath = () => {
 const AskHeatingEnergy = () => {
   const isMobile = useCheckMobileScreen();
   const [heatingEnergy, setHeatingEnergy] = React.useState("");
+  // const [heatingEnergy, setHeatingEnergy] = React.useState(
+  //   localStorage.getItem("heatingEnergy")
+  // );
 
   const setSelected = (number) => {
     setHeatingEnergy(number);

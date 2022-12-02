@@ -27,7 +27,7 @@ const AskName = () => {
         <img src="./assets/logo.svg" alt="Greener Logo" />
       </nav>
 
-      <section className="h-[85vh] flex flex-col gap-4 xl:gap-24 items-center">
+      <form className="h-[85vh] flex flex-col gap-4 xl:gap-24 items-center">
         <div className="flex items-center">
           <div className={`absolute ${isMobile ? "top-24 left-4" : "left-28"}`}>
             <Link to="/accomodationaffected">
@@ -62,6 +62,7 @@ const AskName = () => {
               Prénom
             </label>
             <input
+              autoFocus
               id="firstName"
               className={`input ${
                 isMobile && "!w-[320px] !h-[60px] !text-base !p-3"
@@ -92,13 +93,14 @@ const AskName = () => {
 
         <Link to={"/telephone"}>
           <button
+            type="submit"
             disabled={firstName === "" || lastName === ""}
             className="button mt-6"
           >
             CONTINUER
           </button>
         </Link>
-      </section>
+      </form>
     </>
   );
 };

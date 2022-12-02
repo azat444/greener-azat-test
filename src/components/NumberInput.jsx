@@ -12,7 +12,7 @@ const NumberInput = ({
   isMobile,
 }) => {
   return (
-    <section className="flex h-[85vh] flex-col gap-4 xl:gap-24 items-center">
+    <form className="flex h-[85vh] flex-col gap-4 xl:gap-24 items-center">
       <div className="flex items-center">
         <div className={`absolute ${isMobile ? "top-24 left-4" : "left-28"}`}>
           <Link to={backNav}>
@@ -39,6 +39,7 @@ const NumberInput = ({
       <div className="flex-1 flex flex-col gap-2 xl:gap-8 items-center justify-center">
         <label className="text-xs xl:text-base">{label}</label>
         <input
+          autoFocus
           className={`input bg-transparent ${
             isMobile &&
             "!w-[332px] !h-[40px] !rounded-[10px] !border !text-base !leading-7 !px-3"
@@ -51,13 +52,14 @@ const NumberInput = ({
 
       <Link to={nextNav}>
         <button
+          type="submit"
           disabled={state === "" || !state}
           className={`button ${isMobile && "mt-24 !mb-12"}`}
         >
           CONTINUER
         </button>
       </Link>
-    </section>
+    </form>
   );
 };
 

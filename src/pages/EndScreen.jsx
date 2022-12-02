@@ -4,7 +4,7 @@ import useCheckMobileScreen from "../util/useCheckMobileScreen";
 
 const sendData = () => {
   const scriptUrl =
-    "https://script.google.com/macros/s/AKfycbx2hnwUc2YHKoXcraZDCDIjzWJ8_m_z65cN0pZFp5tFv3swB9ikCXQpbRysIvqaBAONTw/exec";
+    "https://script.google.com/macros/s/AKfycbwU1FD1LOaKq_TfqlTRRq7F8Tt3G7isIYlmHh7OEog0Y9Vq4aQTG5EXeILGl-HuZBhphQ/exec";
 
   const firstName = localStorage.getItem("firstName");
   const lastName = localStorage.getItem("lastName");
@@ -28,6 +28,7 @@ const sendData = () => {
   const gasEquipment = localStorage.getItem("gasEquipment");
   const electricEquipment = localStorage.getItem("electricEquipment");
   const oilEquipment = localStorage.getItem("oilEquipment");
+  const heatingEquipment = localStorage.getItem("heatingEquipment");
   const solarOption = localStorage.getItem("solarOption");
   const roofOrientation = localStorage.getItem("roofOrientation");
   const roofArea = localStorage.getItem("roofArea");
@@ -272,6 +273,35 @@ const sendData = () => {
       break;
   }
 
+  // Heating Equipment Transformation
+
+  // Heating Equipment 1 -> Pompe à chaleur
+  // Heating Equipment 2 -> Chaudière
+  // Heating Equipment 3 -> Poêle à bois
+  // Heating Equipment 4 -> Insert cheminée
+  // Heating Equipment 5 -> Radiateur électrique
+
+  let heatingEquipmentString = "";
+  switch (heatingEquipment) {
+    case "1":
+      heatingEquipmentString = "Pompe à chaleur";
+      break;
+    case "2":
+      heatingEquipmentString = "Chaudière";
+      break;
+    case "3":
+      heatingEquipmentString = "Poêle à bois";
+      break;
+    case "4":
+      heatingEquipmentString = "Insert cheminée";
+      break;
+    case "5":
+      heatingEquipmentString = "Radiateur électrique";
+      break;
+    default:
+      break;
+  }
+
   // Solar Option Transformation
 
   // Solar Option 1 -> Panneaux Solaires Photovoltaïques
@@ -409,6 +439,7 @@ const sendData = () => {
   formData.append("Electric Equipment", electricEquipmentString);
   formData.append("Gas Equipment", gasEquipmentString);
   formData.append("Oil Equipment", oilEquipmentString);
+  formData.append("Heating Equipment", heatingEquipmentString);
 
   formData.append("Solar Option", solarOptionString);
   formData.append("Roof Orientation", roofOrientationString);
