@@ -28,7 +28,7 @@ const AskPropertyType = () => {
 
       <div className="flex flex-grow flex-col gap-24 items-center">
         {isMobile ? (
-          <h1 className="inter text-2xl text-center font-bold leading-[29px] px-6">
+          <h1 className="inter text-2xl text-center font-bold leading-7 px-6">
             es aides concernent-elles une maison ou un appartement?
           </h1>
         ) : (

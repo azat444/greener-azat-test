@@ -7,6 +7,9 @@ import useCheckMobileScreen from "../util/useCheckMobileScreen";
 const AskOilEquipment = () => {
   const isMobile = useCheckMobileScreen();
   const [oilEquipment, setOilEquipment] = React.useState("");
+  // const [oilEquipment, setOilEquipment] = React.useState(
+  //   localStorage.getItem("oilEquipment")
+  // );
 
   const setSelected = (number) => {
     setOilEquipment(number);
@@ -31,7 +34,7 @@ const AskOilEquipment = () => {
           <div className={`absolute ${isMobile ? "top-24 left-4" : "left-28"}`}>
             <Link to="/heatenergy">
               <img
-                className={isMobile && "w-[27px] h-[27px]"}
+                className={isMobile && "w-7 h-7"}
                 src="./assets/arrow.svg"
                 alt="Back"
               />
@@ -41,7 +44,7 @@ const AskOilEquipment = () => {
             <h1
               className={
                 isMobile
-                  ? "inter text-2xl text-center font-bold leading-[29px] px-6 py-4"
+                  ? "inter text-2xl text-center font-bold leading-7 px-6 py-4"
                   : "mx-auto heading flex-1 text-center lg:text-5xl"
               }
             >
@@ -60,8 +63,8 @@ const AskOilEquipment = () => {
             selected={oilEquipment === "1"}
             setSelected={setSelected}
             isMobile={isMobile}
-            mobileSize={"h-[148px] w-[154px]"}
-            size={isMobile ? "w-[90px] h-[56px]" : "w-[54px] h-[82px]"}
+            mobileSize={"h-36 w-40"}
+            size={isMobile ? "w-20 h-14" : "w-14 h-20"}
           />
           <HeatEnergyItem
             icon={"./assets/oil2.svg"}
@@ -70,8 +73,8 @@ const AskOilEquipment = () => {
             selected={oilEquipment === "2"}
             setSelected={setSelected}
             isMobile={isMobile}
-            mobileSize={"h-[148px] w-[154px]"}
-            size={isMobile ? "w-[90px] h-[56px]" : "w-[84px] h-[84px]"}
+            mobileSize={"h-36 w-40"}
+            size={isMobile ? "w-20 h-14" : "w-20 h-20"}
           />
           <HeatEnergyItem
             icon={"./assets/oil3.svg"}
@@ -80,8 +83,8 @@ const AskOilEquipment = () => {
             selected={oilEquipment === "3"}
             setSelected={setSelected}
             isMobile={isMobile}
-            mobileSize={"h-[148px] w-[154px]"}
-            size={isMobile ? "w-[90px] h-[56px]" : "w-[85px] h-[85px]"}
+            mobileSize={"h-36 w-40"}
+            size={isMobile ? "w-20 h-14" : "w-20 h-20"}
           />
         </div>
 

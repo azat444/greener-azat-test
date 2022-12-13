@@ -6,6 +6,9 @@ import useCheckMobileScreen from "../util/useCheckMobileScreen";
 const AskSlopeChoice2 = () => {
   const isMobile = useCheckMobileScreen();
   const [slopeChoice2, setslopeChoice2] = React.useState("");
+  // const [slopeChoice2, setslopeChoice2] = React.useState(
+  //   localStorage.getItem("slopeChoice2")
+  // );
 
   const setSelected = (number) => {
     setslopeChoice2(number);
@@ -30,7 +33,7 @@ const AskSlopeChoice2 = () => {
           <div className={`absolute ${isMobile ? "top-24 left-4" : "left-28"}`}>
             <Link to="/roofarea">
               <img
-                className={isMobile && "w-[27px] h-[27px]"}
+                className={isMobile && "w-7 h-7"}
                 src="./assets/arrow.svg"
                 alt="Back"
               />
@@ -40,7 +43,7 @@ const AskSlopeChoice2 = () => {
             <h1
               className={
                 isMobile
-                  ? "inter text-2xl text-center font-bold leading-[29px] px-6 py-4"
+                  ? "inter text-2xl text-center font-bold leading-7 px-6 py-4"
                   : "mx-auto heading flex-1 text-center lg:text-5xl px-24"
               }
             >

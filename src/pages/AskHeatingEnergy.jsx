@@ -49,7 +49,7 @@ const AskHeatingEnergy = () => {
           <div className={`absolute ${isMobile ? "top-24 left-4" : "left-28"}`}>
             <Link to="/goals">
               <img
-                className={isMobile && "w-[27px] h-[27px]"}
+                className={isMobile && "w-7 h-7"}
                 src="./assets/arrow.svg"
                 alt="Back"
               />
@@ -59,7 +59,7 @@ const AskHeatingEnergy = () => {
             <h1
               className={
                 isMobile
-                  ? "inter text-2xl text-center font-bold leading-[29px] px-6 py-4"
+                  ? "inter text-2xl text-center font-bold leading-7 px-6 py-4"
                   : "mx-auto heading flex-1 text-center lg:text-5xl"
               }
             >
@@ -71,7 +71,7 @@ const AskHeatingEnergy = () => {
         </div>
 
         {/* Make a grid of 6 elements in 2 rows */}
-        <div className="grid grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-2 lg:grid-cols-3 gap-6 pb-20">
           <HeatEnergyItem
             icon={"./assets/heat1.svg"}
             text={"Chauffage au Fioul"}
@@ -79,8 +79,8 @@ const AskHeatingEnergy = () => {
             selected={heatingEnergy === "1"}
             setSelected={setSelected}
             isMobile={isMobile}
-            mobileSize={"h-[148px] w-[154px]"}
-            size={isMobile ? "w-[90px] h-[56px]" : "w-[54px] h-[82px]"}
+            mobileSize={"h-36 w-40"}
+            size={isMobile ? "w-20 h-14" : "w-14 h-20"}
           />
           <HeatEnergyItem
             icon={"./assets/heat2.svg"}
@@ -89,8 +89,8 @@ const AskHeatingEnergy = () => {
             selected={heatingEnergy === "2"}
             setSelected={setSelected}
             isMobile={isMobile}
-            mobileSize={"h-[148px] w-[154px]"}
-            size={isMobile ? "w-[90px] h-[56px]" : "w-[84px] h-[84px]"}
+            mobileSize={"h-36 w-40"}
+            size={isMobile ? "w-20 h-14" : "w-20 h-20"}
           />
           <HeatEnergyItem
             icon={"./assets/heat3.svg"}
@@ -99,8 +99,8 @@ const AskHeatingEnergy = () => {
             selected={heatingEnergy === "3"}
             setSelected={setSelected}
             isMobile={isMobile}
-            mobileSize={"h-[148px] w-[154px]"}
-            size={isMobile ? "w-[90px] h-[56px]" : "w-[85px] h-[85px]"}
+            mobileSize={"h-36 w-40"}
+            size={isMobile ? "w-20 h-14" : "w-20 h-20"}
           />
           <HeatEnergyItem
             icon={"./assets/heat4.svg"}
@@ -109,8 +109,8 @@ const AskHeatingEnergy = () => {
             selected={heatingEnergy === "4"}
             setSelected={setSelected}
             isMobile={isMobile}
-            mobileSize={"h-[148px] w-[154px]"}
-            size={isMobile ? "w-[90px] h-[56px]" : "w-[65px] h-[90px]"}
+            mobileSize={"h-36 w-40"}
+            size={isMobile ? "w-20 h-14" : "w-16 h-24"}
           />
           <HeatEnergyItem
             icon={"./assets/heat5.svg"}
@@ -119,8 +119,8 @@ const AskHeatingEnergy = () => {
             selected={heatingEnergy === "5"}
             setSelected={setSelected}
             isMobile={isMobile}
-            mobileSize={"h-[148px] w-[154px]"}
-            size={isMobile ? "w-[90px] h-[56px]" : "w-[110px] h-[110px]"}
+            mobileSize={"h-36 w-40"}
+            size={isMobile ? "w-20 h-14" : "w-28 h-28"}
           />
           <HeatEnergyItem
             icon={"./assets/heat6.svg"}
@@ -129,8 +129,8 @@ const AskHeatingEnergy = () => {
             selected={heatingEnergy === "6"}
             setSelected={setSelected}
             isMobile={isMobile}
-            mobileSize={"h-[148px] w-[154px]"}
-            size={isMobile ? "w-[90px] h-[56px]" : "w-[115px] h-[80px]"}
+            mobileSize={"h-36 w-40"}
+            size={isMobile ? "w-20 h-14" : "w-28 h-20"}
           />
         </div>
 

@@ -7,6 +7,9 @@ import useCheckMobileScreen from "../util/useCheckMobileScreen";
 const AskGasEquipment = () => {
   const isMobile = useCheckMobileScreen();
   const [gasEquipment, setGasEquipment] = React.useState("");
+  // const [gasEquipment, setGasEquipment] = React.useState(
+  //   localStorage.getItem("gasEquipment")
+  // );
 
   const setSelected = (number) => {
     setGasEquipment(number);
@@ -31,7 +34,7 @@ const AskGasEquipment = () => {
           <div className={`absolute ${isMobile ? "top-24 left-4" : "left-28"}`}>
             <Link to="/heatenergy">
               <img
-                className={isMobile && "w-[27px] h-[27px]"}
+                className={isMobile && "w-7 h-7"}
                 src="./assets/arrow.svg"
                 alt="Back"
               />
@@ -41,7 +44,7 @@ const AskGasEquipment = () => {
             <h1
               className={
                 isMobile
-                  ? "inter text-2xl text-center font-bold leading-[29px] px-6 py-4"
+                  ? "inter text-2xl text-center font-bold leading-7 px-6 py-4"
                   : "mx-auto heading flex-1 text-center lg:text-5xl"
               }
             >
@@ -60,8 +63,8 @@ const AskGasEquipment = () => {
             selected={gasEquipment === "1"}
             setSelected={setSelected}
             isMobile={isMobile}
-            mobileSize={"h-[148px] w-[154px]"}
-            size={isMobile ? "w-[90px] h-[56px]" : "w-[54px] h-[82px]"}
+            mobileSize={"h-36 w-40"}
+            size={isMobile ? "w-20 h-14" : "w-14 h-20"}
           />
           <HeatEnergyItem
             icon={"./assets/gas2.svg"}
@@ -70,8 +73,8 @@ const AskGasEquipment = () => {
             selected={gasEquipment === "2"}
             setSelected={setSelected}
             isMobile={isMobile}
-            mobileSize={"h-[148px] w-[154px]"}
-            size={isMobile ? "w-[90px] h-[56px]" : "w-[54px] h-[82px]"}
+            mobileSize={"h-36 w-40"}
+            size={isMobile ? "w-20 h-14" : "w-14 h-20"}
           />
           <HeatEnergyItem
             icon={"./assets/gas3.svg"}
@@ -80,8 +83,8 @@ const AskGasEquipment = () => {
             selected={gasEquipment === "3"}
             setSelected={setSelected}
             isMobile={isMobile}
-            mobileSize={"h-[148px] w-[154px]"}
-            size={isMobile ? "w-[90px] h-[56px]" : "w-[54px] h-[82px]"}
+            mobileSize={"h-36 w-40"}
+            size={isMobile ? "w-20 h-14" : "w-14 h-20"}
           />
           <HeatEnergyItem
             icon={"./assets/gas4.svg"}
@@ -90,8 +93,8 @@ const AskGasEquipment = () => {
             selected={gasEquipment === "4"}
             setSelected={setSelected}
             isMobile={isMobile}
-            mobileSize={"h-[148px] w-[154px]"}
-            size={isMobile ? "w-[90px] h-[56px]" : "w-[54px] h-[82px]"}
+            mobileSize={"h-36 w-40"}
+            size={isMobile ? "w-20 h-14" : "w-14 h-20"}
           />
         </div>
 

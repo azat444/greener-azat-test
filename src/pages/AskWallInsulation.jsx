@@ -6,6 +6,9 @@ import useCheckMobileScreen from "../util/useCheckMobileScreen";
 const AskwallInsulation = () => {
   const isMobile = useCheckMobileScreen();
   const [wallInsulation, setwallInsulation] = React.useState("");
+  // const [wallInsulation, setwallInsulation] = React.useState(
+  //   localStorage.getItem("wallInsulation")
+  // );
 
   const handleSelect = (number) => {
     setwallInsulation(number);
@@ -31,7 +34,7 @@ const AskwallInsulation = () => {
           <div className={`absolute ${isMobile ? "top-24 left-4" : "left-28"}`}>
             <Link to="/garage">
               <img
-                className={isMobile && "w-[27px] h-[27px]"}
+                className={isMobile && "w-7 h-7"}
                 src="./assets/arrow.svg"
                 alt="Back"
               />
@@ -41,11 +44,11 @@ const AskwallInsulation = () => {
             <h1
               className={
                 isMobile
-                  ? "inter text-2xl text-center font-bold leading-[29px] px-6 py-4"
+                  ? "inter text-2xl text-center font-bold leading-7 px-6 py-4"
                   : "mx-auto heading flex-1 text-center lg:text-5xl"
               }
             >
-              Quel type d’isolation des murs souhaitez-vous faire ?
+              L’isolation des combles concerne ?
             </h1>
           </div>
         </div>
@@ -60,8 +63,8 @@ const AskwallInsulation = () => {
             selected={wallInsulation === "1"}
             setSelected={() => handleSelect("1")}
             isMobile={isMobile}
-            mobileSize={"h-[148px] w-[154px]"}
-            size={isMobile ? "w-[90px] h-[56px]" : ""}
+            mobileSize={"h-36 w-40"}
+            size={isMobile ? "w-20 h-14" : ""}
           />
           <HeatEnergyItem
             icon={"./assets/wallIns2.svg"}
@@ -70,8 +73,8 @@ const AskwallInsulation = () => {
             selected={wallInsulation === "2"}
             setSelected={() => handleSelect("2")}
             isMobile={isMobile}
-            mobileSize={"h-[148px] w-[154px]"}
-            size={isMobile ? "w-[90px] h-[56px]" : ""}
+            mobileSize={"h-36 w-40"}
+            size={isMobile ? "w-20 h-14" : ""}
           />
         </div>
         {/* <Link to={"/wallArea"}>

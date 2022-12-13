@@ -17,7 +17,7 @@ const NumberInput = ({
         <div className={`absolute ${isMobile ? "top-24 left-4" : "left-28"}`}>
           <Link to={backNav}>
             <img
-              className={isMobile && "w-[27px] h-[27px]"}
+              className={isMobile && "w-7 h-7"}
               src="./assets/arrow.svg"
               alt="Back"
             />
@@ -27,7 +27,7 @@ const NumberInput = ({
           <h1
             className={
               isMobile
-                ? "inter text-2xl text-center font-bold leading-[29px] px-6 py-4"
+                ? "inter text-2xl text-center font-bold leading-7 px-6 py-4"
                 : "mx-auto heading flex-1 text-center lg:text-5xl"
             }
           >
@@ -42,7 +42,7 @@ const NumberInput = ({
           autoFocus
           className={`input bg-transparent ${
             isMobile &&
-            "!w-[332px] !h-[40px] !rounded-[10px] !border !text-base !leading-7 !px-3"
+            "!w-80 !h-10 !rounded-xl !border !text-base !leading-7 !px-3"
           }`}
           type="number"
           value={state}

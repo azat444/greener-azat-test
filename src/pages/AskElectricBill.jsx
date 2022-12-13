@@ -24,7 +24,7 @@ const AskElectricBill = () => {
           <div className={`absolute ${isMobile ? "top-24 left-4" : "left-28"}`}>
             <Link to="/slopechoice">
               <img
-                className={isMobile && "w-[27px] h-[27px]"}
+                className={isMobile && "w-7 h-7"}
                 src="./assets/arrow.svg"
                 alt="Back"
               />
@@ -34,7 +34,7 @@ const AskElectricBill = () => {
             <h1
               className={
                 isMobile
-                  ? "inter text-2xl text-center font-bold leading-[29px] px-6 py-4"
+                  ? "inter text-2xl text-center font-bold leading-7 px-6 py-4"
                   : "mx-auto heading flex-1 text-center lg:text-5xl px-24"
               }
             >
@@ -51,17 +51,13 @@ const AskElectricBill = () => {
           <input
             autoFocus
             className={`input ${
-              isMobile
-                ? "!w-[200px] !h-[60px] !text-[20px] !rounded-2xl !p-2"
-                : "!w-[350px]"
+              isMobile ? "!w-52 !h-14 !text-xl !rounded-2xl !p-2" : "!w-96"
             } bg-transparent`}
             type="number"
             value={electricBill}
             onChange={changeHandler}
           />
-          <p
-            className={`font-bold ${isMobile ? "text-[30px]" : "text-[50px]"}`}
-          >
+          <p className={`font-bold ${isMobile ? "text-3xl" : "text-5xl"}`}>
             / mois
           </p>
         </div>

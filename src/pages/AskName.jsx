@@ -32,7 +32,7 @@ const AskName = () => {
           <div className={`absolute ${isMobile ? "top-24 left-4" : "left-28"}`}>
             <Link to="/accomodationaffected">
               <img
-                className={isMobile && "w-[27px] h-[27px]"}
+                className={isMobile && "w-7 h-7"}
                 src="./assets/arrow.svg"
                 alt="Back"
               />
@@ -42,7 +42,7 @@ const AskName = () => {
             <h1
               className={
                 isMobile
-                  ? "inter text-2xl text-center font-bold leading-[29px] px-6 py-4"
+                  ? "inter text-2xl text-center font-bold leading-7 px-6 py-4"
                   : "mx-auto heading flex-1 text-center lg:text-5xl px-24"
               }
             >
@@ -65,7 +65,7 @@ const AskName = () => {
               autoFocus
               id="firstName"
               className={`input ${
-                isMobile && "!w-[320px] !h-[60px] !text-base !p-3"
+                isMobile && "!w-80 !h-14 !text-base !p-3"
               } bg-transparent`}
               type="text"
               value={firstName}
@@ -82,7 +82,7 @@ const AskName = () => {
             <input
               id="lastName"
               className={`input ${
-                isMobile && "!w-[320px] !h-[60px] !text-base !p-3"
+                isMobile && "!w-80 !h-14 !text-base !p-3"
               } bg-transparent`}
               type="text"
               value={lastName}

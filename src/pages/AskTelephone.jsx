@@ -24,7 +24,7 @@ const AskTelephone = () => {
           <div className={`absolute ${isMobile ? "top-24 left-4" : "left-28"}`}>
             <Link to="/name">
               <img
-                className={isMobile && "w-[27px] h-[27px]"}
+                className={isMobile && "w-7 h-7"}
                 src="./assets/arrow.svg"
                 alt="Back"
               />
@@ -34,7 +34,7 @@ const AskTelephone = () => {
             <h1
               className={
                 isMobile
-                  ? "inter text-2xl text-center font-bold leading-[29px] px-6 py-4"
+                  ? "inter text-2xl text-center font-bold leading-7 px-6 py-4"
                   : "mx-auto heading flex-1 text-center lg:text-5xl px-24"
               }
             >
@@ -44,14 +44,14 @@ const AskTelephone = () => {
         </div>
 
         <div className="flex-1 flex flex-col gap-8 items-center justify-center">
-          <label className="font-medium text-[14px]" htmlFor="telephone">
+          <label className="font-medium text-sm" htmlFor="telephone">
             Téléphone
           </label>
           <div
             className={`flex items-center border-2 border-[#28c985] ${
               isMobile
-                ? "w-[300px] h-[60px] rounded-[20px] p-[8px] text-[14px]"
-                : "p-[24px] w-[600px] h-[80px] rounded-[20px] text-[32px] leading-[58px]"
+                ? "w-72 h-14 rounded-[1.25rem] p-2 text-sm"
+                : "p-6 w-[37.5rem] h-20 rounded-[1.25rem] text-3xl leading-10"
             } nunito text-[#a9a9a9]`}
           >
             <input
@@ -63,7 +63,7 @@ const AskTelephone = () => {
               onChange={changeHandler}
             />
             <img
-              className={isMobile && "w-[25px] h-[25px]"}
+              className={isMobile && "w-6 h-6"}
               src="/assets/telephone.svg"
               alt="Phone"
             />

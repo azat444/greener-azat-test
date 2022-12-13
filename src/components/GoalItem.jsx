@@ -13,8 +13,8 @@ const GoalItem = ({
     <div
       className={` flex flex-col gap-8 items-center justify-center  border-[#c8ccd8] bg-white ${
         isMobile
-          ? "w-[337px] h-[82px] rounded-[20px] border py-3 px-4"
-          : "w-[700px] rounded-[40px] border-2 py-10 px-9"
+          ? "w-80 h-20 rounded-[1.25rem] border py-3 px-4"
+          : "w-[44rem] rounded-[2.5rem] border-2 py-10 px-9"
       } ${selected && "mobileSelected xl:selected"}`}
       onClick={() => {
         setGoal(number);
@@ -23,23 +23,19 @@ const GoalItem = ({
     >
       <div className={`flex w-full ${isMobile ? "gap-3" : "gap-9"}`}>
         <div className="flex items-center justify-center">
-          <img
-            className={isMobile ? "w-[38px] h-[42px]" : ""}
-            src={icon}
-            alt="Goal1"
-          />
+          <img className={isMobile ? "w-9 h-10" : ""} src={icon} alt="Goal1" />
         </div>
         <div className="flex-1 ">
           <p
             className={`nunito font-bold ${
-              isMobile ? "text-[14px] leading-[29px]" : "text-[26px]"
+              isMobile ? "text-sm leading-5" : "text-2xl"
             } highlight-text`}
           >
             {heading}
           </p>
           <p
             className={`text-[#999999] nunito font-medium ${
-              isMobile ? "text-[14px] leading-[29px]" : "text-[26px]"
+              isMobile ? "text-sm leading-5" : "text-2xl"
             }`}
           >
             {text}
@@ -47,16 +43,14 @@ const GoalItem = ({
         </div>
         <div
           className={`${
-            isMobile
-              ? "w-[30px] h-[30px] !rounded-[7px]"
-              : "w-[60px] h-[60px] rounded-[15px]"
+            isMobile ? "w-7 h-7 !rounded-lg" : "w-14 h-14 rounded-2xl"
           } flex items-center border border-[#C8CCD8] justify-center m-auto ${
             selected && "selected-arrow"
           }`}
         >
           {selected && (
             <img
-              className={isMobile && "w-[18px] h-[14px]"}
+              className={isMobile && "w-4 h-3"}
               src="./assets/tick.svg"
               alt="Tick"
             />

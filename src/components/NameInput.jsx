@@ -31,7 +31,7 @@ const NameInput = ({
         <div className={`absolute ${isMobile ? "top-24 left-4" : "left-28"}`}>
           <Link to={backNav}>
             <img
-              className={isMobile && "w-[27px] h-[27px]"}
+              className={isMobile && "w-7 h-7"}
               src="./assets/arrow.svg"
               alt="Back"
             />
@@ -41,7 +41,7 @@ const NameInput = ({
           <h1
             className={
               isMobile
-                ? "inter text-2xl text-center font-bold leading-[29px] px-6 py-4"
+                ? "inter text-2xl text-center font-bold leading-7 px-6 py-4"
                 : "mx-auto heading flex-1 text-center lg:text-5xl px-24"
             }
           >
@@ -61,7 +61,7 @@ const NameInput = ({
         <input
           autoFocus
           className={`input bg-transparent ${
-            isMobile ? "!w-[320px] !h-[60px] !text-[20px] !p-3" : ""
+            isMobile ? "!w-80 !h-16 !text-xl !p-3" : ""
           }`}
           type="text"
           value={state}

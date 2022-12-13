@@ -6,6 +6,9 @@ import useCheckMobileScreen from "../util/useCheckMobileScreen";
 const AskSolarOption = () => {
   const isMobile = useCheckMobileScreen();
   const [solarOption, setsolarOption] = React.useState("");
+  // const [solarOption, setsolarOption] = React.useState(
+  //   localStorage.getItem("solarOption")
+  // );
 
   const handleSelect = (number) => {
     setsolarOption(number);
@@ -31,7 +34,7 @@ const AskSolarOption = () => {
           <div className={`absolute ${isMobile ? "top-24 left-4" : "left-28"}`}>
             <Link to="/heatenergy">
               <img
-                className={isMobile && "w-[27px] h-[27px]"}
+                className={isMobile && "w-7 h-7"}
                 src="./assets/arrow.svg"
                 alt="Back"
               />
@@ -41,7 +44,7 @@ const AskSolarOption = () => {
             <h1
               className={
                 isMobile
-                  ? "inter text-2xl text-center font-bold leading-[29px] px-6 py-4"
+                  ? "inter text-2xl text-center font-bold leading-7 px-6 py-4"
                   : "mx-auto heading flex-1 text-center lg:text-5xl"
               }
             >
@@ -58,8 +61,8 @@ const AskSolarOption = () => {
             selected={solarOption === "1"}
             setSelected={() => handleSelect("1")}
             isMobile={isMobile}
-            mobileSize={"h-[148px] w-[154px]"}
-            size={isMobile ? "w-[90px] h-[56px]" : ""}
+            mobileSize={"h-36 w-40"}
+            size={isMobile ? "w-20 h-14" : ""}
           />
           <HeatEnergyItem
             icon={"./assets/solar2.svg"}
@@ -68,8 +71,8 @@ const AskSolarOption = () => {
             selected={solarOption === "2"}
             setSelected={() => handleSelect("2")}
             isMobile={isMobile}
-            mobileSize={"h-[148px] w-[154px]"}
-            size={isMobile ? "w-[90px] h-[56px]" : ""}
+            mobileSize={"h-36 w-40"}
+            size={isMobile ? "w-20 h-14" : ""}
           />
         </div>
         {/* <Link to={"/rooforientation"}>

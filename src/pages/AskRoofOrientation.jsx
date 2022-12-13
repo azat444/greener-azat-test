@@ -6,6 +6,9 @@ import useCheckMobileScreen from "../util/useCheckMobileScreen";
 const AskRoofOrientation = () => {
   const isMobile = useCheckMobileScreen();
   const [roofOrientation, setRoofOrientation] = React.useState("");
+  // const [roofOrientation, setRoofOrientation] = React.useState(
+  //   localStorage.getItem("roofOrientation")
+  // );
 
   const setSelected = (number) => {
     setRoofOrientation(number);
@@ -31,7 +34,7 @@ const AskRoofOrientation = () => {
           <div className={`absolute ${isMobile ? "top-24 left-4" : "left-28"}`}>
             <Link to="/solar">
               <img
-                className={isMobile && "w-[27px] h-[27px]"}
+                className={isMobile && "w-7 h-7"}
                 src="./assets/arrow.svg"
                 alt="Back"
               />
@@ -41,7 +44,7 @@ const AskRoofOrientation = () => {
             <h1
               className={
                 isMobile
-                  ? "inter text-2xl text-center font-bold leading-[29px] px-6 py-4"
+                  ? "inter text-2xl text-center font-bold leading-7 px-6 py-4"
                   : "mx-auto heading flex-1 text-center lg:text-5xl px-24"
               }
             >
@@ -52,7 +55,7 @@ const AskRoofOrientation = () => {
         </div>
 
         {/* Make a grid of 6 elements in 2 rows */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 xl:gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 xl:gap-6 pb-20">
           <SelectComp
             selected={roofOrientation === "1"}
             setSelected={() => setSelected("1")}

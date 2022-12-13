@@ -6,7 +6,9 @@ import useCheckMobileScreen from "../util/useCheckMobileScreen";
 
 const AskAtticInsulation = () => {
   const isMobile = useCheckMobileScreen();
-
+  // const [atticInsulation, setAtticInsulation] = React.useState(
+  //   localStorage.getItem("atticInsulation")
+  // );
   const [atticInsulation, setAtticInsulation] = React.useState("");
 
   const handleSelect = (number) => {
@@ -35,7 +37,7 @@ const AskAtticInsulation = () => {
           <div className={`absolute ${isMobile ? "top-24 left-4" : "left-28"}`}>
             <Link to="/garage">
               <img
-                className={isMobile && "w-[27px] h-[27px]"}
+                className={isMobile && "w-7 h-7"}
                 src="./assets/arrow.svg"
                 alt="Back"
               />
@@ -45,7 +47,7 @@ const AskAtticInsulation = () => {
             <h1
               className={
                 isMobile
-                  ? "inter text-2xl text-center font-bold leading-[29px] px-6 py-4"
+                  ? "inter text-2xl text-center font-bold leading-7 px-6 py-4"
                   : "mx-auto heading flex-1 text-center lg:text-5xl"
               }
             >
@@ -64,8 +66,10 @@ const AskAtticInsulation = () => {
             selected={atticInsulation === "1"}
             setSelected={() => handleSelect("1")}
             isMobile={isMobile}
-            mobileSize={"h-[148px] w-[154px]"}
-            size={isMobile ? "w-[90px] h-[56px]" : ""}
+            // mobileSize={" h-36 w-40"}
+            mobileSize={"h-36 w-40"}
+            // size={isMobile ? "w-20 h-14" : ""}
+            size={isMobile ? "w-20 h-14" : ""}
           />
           <HeatEnergyItem
             icon={"./assets/attic2.svg"}
@@ -74,8 +78,10 @@ const AskAtticInsulation = () => {
             selected={atticInsulation === "2"}
             setSelected={() => handleSelect("2")}
             isMobile={isMobile}
-            mobileSize={"h-[148px] w-[154px]"}
-            size={isMobile ? "w-[90px] h-[56px]" : ""}
+            // mobileSize={"h-36 w-40"}
+            mobileSize={"h-36 w-40"}
+            // size={isMobile ? "w-20 h-14" : ""}
+            size={isMobile ? "w-20 h-14" : ""}
           />
         </div>
         {/* <Link to={url}>

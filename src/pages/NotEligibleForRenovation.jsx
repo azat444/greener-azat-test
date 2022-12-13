@@ -16,7 +16,7 @@ const NotEligibleForRenovation = () => {
           <div className={`absolute ${isMobile ? "top-24 left-4" : "left-28"}`}>
             <Link to="/time">
               <img
-                className={isMobile && "w-[27px] h-[27px]"}
+                className={isMobile && "w-7 h-7"}
                 src="./assets/arrow.svg"
                 alt="Back"
               />
@@ -26,7 +26,7 @@ const NotEligibleForRenovation = () => {
             <h1
               className={
                 isMobile
-                  ? "inter text-2xl text-center font-bold leading-[29px] px-6 py-4"
+                  ? "inter text-2xl text-center font-bold leading-7 px-6 py-4"
                   : "mx-auto heading flex-1 text-center lg:text-5xl max-w-[70vw]"
               }
             >
@@ -61,18 +61,18 @@ const NotEligibleForRenovation = () => {
 
           <div className="flex flex-col items-center justify-center gap-14">
             <img
-              className={isMobile && "w-[303px] h-[166px]"}
+              className={isMobile && "w-72 h-40"}
               src="/assets/3phones.png"
               alt="Phone Screen"
             />
             <div className="flex gap-3">
               <img
-                className={isMobile && "w-[128px] h-[39px]"}
+                className={isMobile && "w-32 h-10"}
                 src="/assets/playStore.png"
                 alt="Phone Screen"
               />
               <img
-                className={isMobile && "w-[111px] h-[39px]"}
+                className={isMobile && "w-28 h-10"}
                 src="/assets/appStore.png"
                 alt="Phone Screen"
               />

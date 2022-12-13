@@ -44,14 +44,15 @@ const AskIsolate = () => {
 
   React.useEffect(() => {
     generateURLstring(isolate);
+    localStorage.setItem("isolate", JSON.stringify(isolate));
+    console.log(isolate);
   }, [isolate]);
 
-  const handleSelect = (number) => {
-    setIsolate((prev) => ({
+  const handleSelect = async (number) => {
+    await setIsolate((prev) => ({
       ...prev,
       [`isolate${number}`]: !prev[`isolate${number}`],
     }));
-    localStorage.setItem("isolate", JSON.stringify(isolate));
   };
 
   return (
@@ -65,7 +66,7 @@ const AskIsolate = () => {
           <div className={`absolute ${isMobile ? "top-24 left-4" : "left-28"}`}>
             <Link to="/goals">
               <img
-                className={isMobile && "w-[27px] h-[27px]"}
+                className={isMobile && "w-7 h-7"}
                 src="./assets/arrow.svg"
                 alt="Back"
               />
@@ -75,7 +76,7 @@ const AskIsolate = () => {
             <h1
               className={
                 isMobile
-                  ? "inter text-2xl text-center font-bold leading-[29px] px-6 py-4"
+                  ? "inter text-2xl text-center font-bold leading-7 px-6 py-4"
                   : "mx-auto heading flex-1 text-center lg:text-5xl"
               }
             >
@@ -92,8 +93,8 @@ const AskIsolate = () => {
             selected={isolate.isolate1}
             setSelected={() => handleSelect(1)}
             isMobile={isMobile}
-            mobileSize={"h-[148px] w-[154px]"}
-            size={isMobile ? "w-[90px] h-[56px]" : ""}
+            mobileSize={"h-36 w-40"}
+            size={isMobile ? "w-20 h-14" : ""}
           />
           <HeatEnergyItem
             icon={"./assets/isolate2.svg"}
@@ -102,8 +103,8 @@ const AskIsolate = () => {
             selected={isolate.isolate2}
             setSelected={() => handleSelect(2)}
             isMobile={isMobile}
-            mobileSize={"h-[148px] w-[154px]"}
-            size={isMobile ? "w-[90px] h-[56px]" : ""}
+            mobileSize={"h-36 w-40"}
+            size={isMobile ? "w-20 h-14" : ""}
           />
           <HeatEnergyItem
             icon={"./assets/isolate3.svg"}
@@ -112,8 +113,8 @@ const AskIsolate = () => {
             selected={isolate.isolate3}
             setSelected={() => handleSelect(3)}
             isMobile={isMobile}
-            mobileSize={"h-[148px] w-[154px]"}
-            size={isMobile ? "w-[85px] h-[73px]" : ""}
+            mobileSize={"h-36 w-40"}
+            size={isMobile ? "w-20 h-16" : ""}
           />
           <HeatEnergyItem
             icon={"./assets/isolate4.svg"}
@@ -122,8 +123,8 @@ const AskIsolate = () => {
             selected={isolate.isolate4}
             setSelected={() => handleSelect(4)}
             isMobile={isMobile}
-            mobileSize={"h-[148px] w-[154px]"}
-            size={isMobile ? "w-[101px] h-[67px]" : ""}
+            mobileSize={"h-36 w-40"}
+            size={isMobile ? "w-24 h-16" : ""}
           />
           <HeatEnergyItem
             icon={"./assets/isolate5.svg"}
@@ -132,11 +133,10 @@ const AskIsolate = () => {
             selected={isolate.isolate5}
             setSelected={() => handleSelect(5)}
             isMobile={isMobile}
-            mobileSize={"h-[148px] w-[154px]"}
-            size={isMobile ? "w-[104px] h-[60px]" : ""}
+            mobileSize={"h-36 w-40"}
+            size={isMobile ? "w-24 h-14" : ""}
           />
         </div>
-        {/* Route to different screens as the user has selected different options*/}
         <Link to={url}>
           <button
             disabled={

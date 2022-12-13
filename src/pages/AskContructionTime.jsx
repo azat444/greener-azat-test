@@ -4,6 +4,9 @@ import useCheckMobileScreen from "../util/useCheckMobileScreen";
 
 const AskContructionTime = () => {
   const [constructionTime, setConstructionTime] = React.useState("");
+  // const [constructionTime, setConstructionTime] = React.useState(
+  //   localStorage.getItem("constructionTime")
+  // );
 
   const isMobile = useCheckMobileScreen();
   let navigate = useNavigate();
@@ -25,7 +28,7 @@ const AskContructionTime = () => {
           <div className={`absolute ${isMobile ? "top-24 left-4" : "left-28"}`}>
             <Link to="/">
               <img
-                className={isMobile && "w-[27px] h-[27px]"}
+                className={isMobile && "w-7 h-7"}
                 src="./assets/arrow.svg"
                 alt="Back"
               />
@@ -35,7 +38,7 @@ const AskContructionTime = () => {
             <h1
               className={
                 isMobile
-                  ? "inter text-2xl text-center font-bold leading-[29px] px-6 py-4"
+                  ? "inter text-2xl text-center font-bold leading-7 px-6 py-4"
                   : "mx-auto heading flex-1 text-center lg:text-5xl"
               }
             >
@@ -45,11 +48,11 @@ const AskContructionTime = () => {
           </div>
         </div>
 
-        <div className="flex flex-col xl:flex-row gap-4 xl:gap-28 items-center justify-center">
+        <div className="flex flex-col xl:flex-row gap-4 xl:gap-28 items-center justify-center pb-20">
           <div
             className={`item ${
               constructionTime === "1" && "mobileSelected xl:selected"
-            } ${isMobile && "!w-[160px] !h-[152px]"}`}
+            } ${isMobile && "!w-40 !h-36"}`}
             id="option1"
             onClick={() => {
               setConstructionTime("1");
@@ -57,14 +60,12 @@ const AskContructionTime = () => {
             }}
           >
             <img
-              className={isMobile && "w-[73px] h-[73px]"}
+              className={isMobile && "w-16 h-16"}
               src="./assets/calender.svg"
               alt="Calender"
             />
             <p
-              className={`text-calender ${
-                isMobile && "!text-base !leading-[17px]"
-              }`}
+              className={`text-calender ${isMobile && "!text-base !leading-4"}`}
             >
               Moins de 2 ans
             </p>
@@ -73,7 +74,7 @@ const AskContructionTime = () => {
           <div
             className={`item ${
               constructionTime === "2" && "mobileSelected xl:selected"
-            } ${isMobile && "!w-[160px] !h-[152px]"}`}
+            } ${isMobile && "!w-40 !h-36"}`}
             id="option2"
             onClick={() => {
               setConstructionTime("2");
@@ -81,14 +82,12 @@ const AskContructionTime = () => {
             }}
           >
             <img
-              className={isMobile && "w-[73px] h-[73px]"}
+              className={isMobile && "w-16 h-16"}
               src="./assets/calender.svg"
               alt="Calender"
             />
             <p
-              className={`text-calender ${
-                isMobile && "!text-base !leading-[17px]"
-              }`}
+              className={`text-calender ${isMobile && "!text-base !leading-4"}`}
             >
               Entre 2 et 15 ans
             </p>
@@ -97,7 +96,7 @@ const AskContructionTime = () => {
           <div
             className={`item ${
               constructionTime === "3" && "mobileSelected xl:selected"
-            } ${isMobile && "!w-[160px] !h-[152px]"}`}
+            } ${isMobile && "!w-40 !h-36"}`}
             id="option3"
             onClick={() => {
               setConstructionTime("3");
@@ -105,14 +104,12 @@ const AskContructionTime = () => {
             }}
           >
             <img
-              className={isMobile && "w-[73px] h-[73px]"}
+              className={isMobile && "w-16 h-16"}
               src="./assets/calender.svg"
               alt="Calender"
             />
             <p
-              className={`text-calender ${
-                isMobile && "!text-base !leading-[17px]"
-              }`}
+              className={`text-calender ${isMobile && "!text-base !leading-4"}`}
             >
               Plus de 15 ans
             </p>
