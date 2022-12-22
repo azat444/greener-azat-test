@@ -17,7 +17,7 @@ const AskPropertyType = () => {
   React.useEffect(() => {
     if (propertyType) {
       return navigate("/time");
-    }
+    } // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [propertyType]);
 
   return (

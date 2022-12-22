@@ -20,7 +20,7 @@ const AskHeatingEquipment = () => {
   React.useEffect(() => {
     if (heatingEquipment) {
       navigate("/solar");
-    }
+    } // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [heatingEquipment]);
 
   return (

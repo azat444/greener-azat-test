@@ -19,7 +19,7 @@ const AskSlopeChoice2 = () => {
   React.useEffect(() => {
     if (slopeChoice2) {
       return navigate("/slopechoice");
-    }
+    } // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [slopeChoice2]);
 
   return (

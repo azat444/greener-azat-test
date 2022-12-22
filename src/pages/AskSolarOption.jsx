@@ -20,7 +20,7 @@ const AskSolarOption = () => {
   React.useEffect(() => {
     if (solarOption) {
       navigate("/rooforientation");
-    }
+    } // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [solarOption]);
 
   return (

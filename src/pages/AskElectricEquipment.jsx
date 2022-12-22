@@ -21,7 +21,7 @@ const AskElectricEquipment = () => {
   React.useEffect(() => {
     if (electricEquipment) {
       navigate(getNextPath());
-    }
+    } // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [electricEquipment]);
 
   return (

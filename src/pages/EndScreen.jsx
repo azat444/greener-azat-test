@@ -500,7 +500,7 @@ const EndScreen = () => {
         </div>
 
         <div className="flex flex-col gap-8 items-center">
-          <img src={"./assets/endscreen.png"} alt="Phone" />
+          <img src={"./assets/endscreen.webp"} alt="Phone" />
         </div>
       </section>
     </>

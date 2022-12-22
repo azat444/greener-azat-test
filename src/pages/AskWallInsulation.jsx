@@ -20,7 +20,7 @@ const AskwallInsulation = () => {
   React.useEffect(() => {
     if (wallInsulation) {
       return navigate("/wallArea");
-    }
+    } // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [wallInsulation]);
 
   return (

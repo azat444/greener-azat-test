@@ -14,7 +14,7 @@ const AskContructionTime = () => {
   React.useEffect(() => {
     if (constructionTime) {
       return navigate(constructionTime === "1" ? "/noteligible" : "/area");
-    }
+    } // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [constructionTime]);
 
   return (

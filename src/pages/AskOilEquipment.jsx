@@ -20,7 +20,7 @@ const AskOilEquipment = () => {
   React.useEffect(() => {
     if (oilEquipment) {
       navigate(getNextPath());
-    }
+    } // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [oilEquipment]);
 
   return (

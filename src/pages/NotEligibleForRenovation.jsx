@@ -62,18 +62,18 @@ const NotEligibleForRenovation = () => {
           <div className="flex flex-col items-center justify-center gap-14">
             <img
               className={isMobile && "w-72 h-40"}
-              src="/assets/3phones.png"
+              src="/assets/3phones.webp"
               alt="Phone Screen"
             />
             <div className="flex gap-3">
               <img
                 className={isMobile && "w-32 h-10"}
-                src="/assets/playStore.png"
+                src="/assets/playStore.webp"
                 alt="Phone Screen"
               />
               <img
                 className={isMobile && "w-28 h-10"}
-                src="/assets/appStore.png"
+                src="/assets/appStore.webp"
                 alt="Phone Screen"
               />
             </div>

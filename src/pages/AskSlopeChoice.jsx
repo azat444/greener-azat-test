@@ -20,7 +20,7 @@ const AskSlopeChoice = () => {
   React.useEffect(() => {
     if (slopeChoice) {
       navigate("/electricbill");
-    }
+    } // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [slopeChoice]);
 
   return (

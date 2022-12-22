@@ -24,6 +24,7 @@ const AskAtticInsulation = () => {
     if (atticInsulation) {
       return navigate(url);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [atticInsulation]);
 
   return (

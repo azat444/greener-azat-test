@@ -20,7 +20,7 @@ const AskGasEquipment = () => {
   React.useEffect(() => {
     if (gasEquipment) {
       navigate(getNextPath());
-    }
+    } // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [gasEquipment]);
 
   return (

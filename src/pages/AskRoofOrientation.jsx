@@ -20,7 +20,7 @@ const AskRoofOrientation = () => {
   React.useEffect(() => {
     if (roofOrientation) {
       navigate("/roofarea");
-    }
+    } // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [roofOrientation]);
 
   return (

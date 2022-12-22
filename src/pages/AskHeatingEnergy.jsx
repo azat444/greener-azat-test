@@ -35,7 +35,7 @@ const AskHeatingEnergy = () => {
           ? "/gasequipment"
           : getNextPath()
       );
-    }
+    } // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [heatingEnergy]);
 
   return (
